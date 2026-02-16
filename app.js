@@ -2,8 +2,14 @@ const express = require('express');
 const app = express();
 
 // Configuration - Set your verify token here
-const verifyToken = process.env.VERIFY_TOKEN || 'your_verify_token_here';
+const verifyToken = process.env.VERIFY_TOKEN;
 const PORT = process.env.PORT || 3000;
+
+// Check if VERIFY_TOKEN is configured
+if (!verifyToken) {
+  console.error('ERROR: VERIFY_TOKEN environment variable is required');
+  process.exit(1);
+}
 
 // Webhook verification endpoint
 app.get('/', (req, res) => {
@@ -26,7 +32,6 @@ app.post('/', express.json(), (req, res) => {
 // Start server
 app.listen(PORT, () => {
   console.log(`Webhook server is listening on port ${PORT}`);
-  console.log(`Verify token: ${verifyToken}`);
 });
 
 module.exports = app;
