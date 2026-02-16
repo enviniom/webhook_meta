@@ -1,0 +1,25 @@
+{
+  "name": "webhook_meta",
+  "version": "1.0.0",
+  "description": "Server para webhook meta",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enviniom/webhook_meta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/enviniom/webhook_meta/issues"
+  },
+  "homepage": "https://github.com/enviniom/webhook_meta#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
