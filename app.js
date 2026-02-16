@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 });
 
 // Webhook event handler endpoint
-app.post('/', express.json(), (req, res) => {
+app.post('/', express.json({ limit: '1mb' }), (req, res) => {
   console.log('Webhook event received:', JSON.stringify(req.body, null, 2));
   res.status(200).send('EVENT_RECEIVED');
 });
